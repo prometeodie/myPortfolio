@@ -1,0 +1,55 @@
+@import '../scss/variables.scss';
+
+
+.menu,
+.menu__header-icon{
+  display: flex;
+  align-items: center;
+}
+
+
+.menu{
+  background-color: rgba(22, 22, 24, 0.566);
+  justify-content: space-between;
+  width: 100%;
+
+  &__header-icon__letter,
+  &__icon:hover{
+    color: $facy-letter-color1;
+  }
+
+  &__header-icon{
+    background-color: black;
+    flex-direction:column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 0.5rem;
+  }
+  &__header-icon__letter{
+    font-size: xxx-large;
+    margin: 0;
+    margin: 0.5rem;
+    text-shadow: 2px 2px  $facy-letter-color2;
+  }
+
+  &__icon{
+    cursor: pointer;
+    margin: 0.5rem;
+    font-size: 25px;
+  }
+
+  &__social-media{
+    padding-right: 0.5rem;
+  }
+
+  &__icon-social{
+   text-decoration: none;
+   color: $font-color;
+  }
+}
+
+.active{
+  color: $facy-letter-color1;
+}
+
+

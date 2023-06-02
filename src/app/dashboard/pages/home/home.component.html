@@ -1,0 +1,19 @@
+
+<section class="home">
+  <article class="home__text"
+            [ngClass]="{'home__text--active': effect}">
+   <h2 class="home__text__description">
+    Hi,<br>
+    I'm <span class="home__text__letter">F</span>ranco,<br>
+    Web Developer.
+  </h2>
+  <h5 class="home__text__job">Front End Developer / Web Developer / Js / Angular</h5>
+   <button class="home__button" routerLink="/portfolio/contact">Contact Me</button>
+  </article>
+  <span class="home__big-letter" [ngClass]="{'home__big-letter--active': effect}">F</span>
+  <button class="home__next-section-btn"
+          routerLink="/portfolio/about-me">
+    <i class="home__next-section-btn__icon fa-sharp fa-solid fa-right-long"></i>
+  </button>
+
+</section>

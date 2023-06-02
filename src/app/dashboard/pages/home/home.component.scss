@@ -1,0 +1,134 @@
+@import '../../../shared/scss/variables.scss';
+
+
+@mixin button($bg-color,$color,$padding,$hover-color,$hover-border-color){
+  background-color: transparent;
+  padding: $padding;
+  color: $color;
+  border: 0.4px solid $color;
+  border-radius: 3px;
+  margin-top: 2rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+
+  &:hover{
+    color: $hover-color;
+    border: 0.4px solid $hover-border-color;
+    background-color: rgba(255, 255, 255, 0.09);
+  }
+}
+
+@mixin translate($distance){
+  transform: translate($distance);
+}
+
+.home__text__description,
+.home__text__job,
+.home__big-letter{
+  font-weight: bolder;
+}
+.home__big-letter,
+.home__text,
+.home__next-section-btn{
+  position: absolute;
+}
+
+.home,
+.home__text__job{
+   position: relative;
+}
+
+.home{
+ background-image: url('../../../../assets/img/fondo-abstracto-tecnologia-moleculas-formas-poligonales-conectando-puntos-lineas-estructura-conexion-visualizacion-big-data_7247-3606.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ display: flex;
+ height: 100vh;
+ align-items: center;
+ padding-left: 3rem;
+
+
+  &__text__description{
+    margin: 0;
+    font-size: 40px;
+    line-height: initial;
+  }
+
+  &__text{
+    left: -10rem;
+    opacity: 0;
+    z-index: 1;
+    transition: 2s;
+
+      &--active{
+        @include translate(13rem);
+        opacity: 100%;
+      }
+  }
+
+
+  &__text__job{
+    color: #666
+  }
+
+  &__big-letter{
+    right: 8%;
+    font-size: 0;
+    transition:2s;
+    opacity: 0;
+
+      &--active{
+        text-shadow: 30px 0px $facy-letter-color1;
+        color: $facy-letter-color2;
+        transform: rotate(335deg);
+        opacity: 100%;
+      }
+  }
+
+
+  &__button{
+    @include button(transparent, #00ffff, 0.4rem 1.8rem, #01ffffac, #01ffffac);
+  }
+
+  &__next-section-btn{
+    @include button(transparent, rgb(216, 11, 97), 0.4rem 1.8rem, rgb(174, 7, 77),rgb(174, 7, 77));
+    right: 1rem;
+    bottom: 6rem;
+    transition: 2s;
+
+    &__icon{
+      padding: 0 0.5rem;
+    }
+
+    &:hover::before{
+      content: 'ABOUT ME';
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width:320px) {
+  .home__big-letter--active{
+    font-size: 28rem;
+  }
+
+  .home__text--active{
+    @include translate(11rem);
+  }
+}
+
+@media (min-width:480px) {
+  .home__big-letter--active{
+    font-size: 35rem;
+  }
+
+  .home__text--active{
+    @include translate(15rem);
+  }
+
+}
+@media (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

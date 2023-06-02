@@ -1,0 +1,14 @@
+
+<section class="menu">
+  <div class="menu__header-icon">
+    <h1 class="menu__header-icon__letter">F</h1>
+    <span>Franco</span>
+  </div>
+  <div class="menu__icon-container" >
+    <i *ngFor="let item of menu" [routerLinkActive]="'active'" [routerLink]="item.route" [class]="item.class"></i>
+  </div>
+  <div class="menu__social-media">
+    <a *ngFor="let item of socialMedia" [href]="item.route"><i [class]="item.class"></i></a>
+  </div>
+</section>
+
