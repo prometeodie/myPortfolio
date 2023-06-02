@@ -1,12 +1,15 @@
 @import '../scss/variables.scss';
 
 
+@mixin hoverIconColor($color){
+  color: $color;
+}
+
 .menu,
 .menu__header-icon{
   display: flex;
   align-items: center;
 }
-
 
 .menu{
   background-color: rgba(22, 22, 24, 0.566);
@@ -15,7 +18,7 @@
 
   &__header-icon__letter,
   &__icon:hover{
-    color: $facy-letter-color1;
+    @include hoverIconColor($facy-letter-color1)
   }
 
   &__header-icon{
@@ -25,6 +28,7 @@
     justify-content: center;
     padding: 0 0.5rem;
   }
+
   &__header-icon__letter{
     font-size: xxx-large;
     margin: 0;
@@ -46,10 +50,62 @@
    text-decoration: none;
    color: $font-color;
   }
+  &__icon-social:hover{
+    @include hoverIconColor($facy-letter-color2);
+  }
 }
 
 .active{
   color: $facy-letter-color1;
+}
+
+// MEDIA QUERIES
+
+@media (min-width:320px) {
+
+  .menu__social-media{
+    border-left: 0.5px solid $facy-letter-color2;
+   }
+
+  }
+@media (min-width:380px) {
+
+  .menu__social-media{
+    border-left: 0.5px solid $facy-letter-color2;
+    padding-left: 2rem;
+   }
+
+  }
+
+@media (min-width:801px) {
+
+  .menu{
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 5rem;
+    z-index: 999;
+
+      &__header-icon{
+        padding: 0.5rem 0;
+        width: 100%;
+        height: 10%;
+      }
+
+      &__icon-container,
+      &__social-media{
+        text-align: center;
+      }
+      &__social-media{
+        border: none;
+        padding-bottom: 1rem;
+        padding-left: 0;
+      }
+  }
+
+
 }
 
 

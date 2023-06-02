@@ -10,6 +10,7 @@
   margin-top: 2rem;
   letter-spacing: 3px;
   cursor: pointer;
+  z-index: 6;
 
   &:hover{
     color: $hover-color;
@@ -22,9 +23,16 @@
   transform: translate($distance);
 }
 
+@mixin backGroundTextPosition($position1,$position2,$rotate){
+  bottom: $position1;
+  left: $position2;
+  transform: rotate($rotate);
+}
+
 .home__text__description,
 .home__text__job,
-.home__big-letter{
+.home__big-letter,
+.back-g-text{
   font-weight: bolder;
 }
 .home__big-letter,
@@ -36,6 +44,38 @@
 .home,
 .home__text__job{
    position: relative;
+}
+// styles for each backGround green word
+.back-g-text{
+  font-family: 'Indie Flower', cursive;
+  position: absolute;
+  color:rgba(0, 128, 0, 0.426);
+  font-size: large;
+
+  &--1{
+    @include backGroundTextPosition(10%,5%, 75deg)
+  }
+  &--2{
+    @include backGroundTextPosition(20%,33%, 110deg)
+  }
+  &--3{
+    @include backGroundTextPosition(47%,17%, 70deg)
+  }
+  &--4{
+    @include backGroundTextPosition(80%,80%, 140deg)
+  }
+  &--5{
+    @include backGroundTextPosition(47%,53%, 75deg)
+  }
+  &--6{
+    @include backGroundTextPosition(64%,90%, 75deg)
+  }
+  &--7{
+    @include backGroundTextPosition(90%,35%, 7deg)
+  }
+  &--8{
+    @include backGroundTextPosition(94%,1%, 75deg)
+  }
 }
 
 .home{
@@ -57,7 +97,7 @@
   &__text{
     left: -10rem;
     opacity: 0;
-    z-index: 1;
+    z-index: 5;
     transition: 2s;
 
       &--active{
@@ -65,7 +105,6 @@
         opacity: 100%;
       }
   }
-
 
   &__text__job{
     color: #666
@@ -76,22 +115,22 @@
     font-size: 0;
     transition:2s;
     opacity: 0;
+    z-index: 2;
 
       &--active{
-        text-shadow: 30px 0px $facy-letter-color1;
+        text-shadow: 20px 10px $facy-letter-color1, 35px 20px $facy-letter-color3;
         color: $facy-letter-color2;
         transform: rotate(335deg);
         opacity: 100%;
       }
   }
 
-
   &__button{
     @include button(transparent, #00ffff, 0.4rem 1.8rem, #01ffffac, #01ffffac);
   }
 
   &__next-section-btn{
-    @include button(transparent, rgb(216, 11, 97), 0.4rem 1.8rem, rgb(174, 7, 77),rgb(174, 7, 77));
+    @include button(transparent, rgb(216, 11, 97), 0.4rem 1.8rem, rgb(255, 17, 116),rgb(255, 17, 116));
     right: 1rem;
     bottom: 6rem;
     transition: 2s;
@@ -129,6 +168,24 @@
 
 }
 @media (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+@media (min-width:801px) {
+  .home__text--active{
+    @include translate(17rem);
+  }
+}
+@media (min-width:1025px) {
+
+    .home__text--active{
+      @include translate(23rem);
+    }
+
+    .home__big-letter{
+      right: 12%;
+    }
+ }
+@media (min-width:1281px) {
+  .home__big-letter{
+    right: 16%;
+  }
+}

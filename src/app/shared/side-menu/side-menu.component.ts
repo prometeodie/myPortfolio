@@ -16,8 +16,8 @@ export class SideMenuComponent {
   ]
 
   socialMedia:Menu[]=[
-    {route:'https://www.linkedin.com/in/franco-rodriguez-b121491b8/', class:'menu__icon menu__icon-social fa-brands fa-linkedin'},
-    {route:'https://github.com/prometeodie?tab=repositories', class:'menu__icon menu__icon-social fa-brands fa-github'}
+    {route:'https://www.linkedin.com/in/franco-rodriguez-b121491b8/', class:'menu__icon menu__icon-social menu__icon-social fa-brands fa-linkedin'},
+    {route:'https://github.com/prometeodie?tab=repositories', class:'menu__icon menu__icon-social menu__icon-social fa-brands fa-github'}
   ]
 
 

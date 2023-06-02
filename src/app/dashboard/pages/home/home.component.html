@@ -8,12 +8,12 @@
     Web Developer.
   </h2>
   <h5 class="home__text__job">Front End Developer / Web Developer / Js / Angular</h5>
-   <button class="home__button" routerLink="/portfolio/contact">Contact Me</button>
-  </article>
-  <span class="home__big-letter" [ngClass]="{'home__big-letter--active': effect}">F</span>
-  <button class="home__next-section-btn"
-          routerLink="/portfolio/about-me">
-    <i class="home__next-section-btn__icon fa-sharp fa-solid fa-right-long"></i>
-  </button>
-
+  <button class="home__button" routerLink="/portfolio/contact">Contact Me</button>
+</article>
+<span class="home__big-letter" [ngClass]="{'home__big-letter--active': effect}">F</span>
+<button class="home__next-section-btn"
+routerLink="/portfolio/about-me">
+<i class="home__next-section-btn__icon fa-sharp fa-solid fa-right-long"></i>
+</button>
+<span *ngFor="let item of backGroundText" [class]="item.class">{{item.text}}</span>
 </section>
