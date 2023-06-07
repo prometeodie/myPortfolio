@@ -84,6 +84,7 @@
  background-size: cover;
  display: flex;
  height: 100vh;
+ overflow: hidden;
  align-items: center;
  padding-left: 3rem;
 
@@ -167,7 +168,6 @@
   }
 
 }
-@media (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
 
 @media (min-width:801px) {
   .home__text--active{

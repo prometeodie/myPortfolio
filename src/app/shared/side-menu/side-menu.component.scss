@@ -12,9 +12,11 @@
 }
 
 .menu{
+  position: fixed;
   background-color: rgba(22, 22, 24, 0.566);
   justify-content: space-between;
   width: 100%;
+  z-index: 999;
 
   &__header-icon__letter,
   &__icon:hover{

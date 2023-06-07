@@ -1,1 +1,33 @@
-<p>about-me works!</p>
+<section class="about-me-container">
+  <div class="about-me">
+    <h1 class="about-me__title">About Me</h1>
+    <span class="about-me__text__title"><strong>Franco.D Rodriguez</strong></span>
+    <p class="about-me__text">
+      I'm a {{yearsOld}} years old, currently I'm  living in Tandil, Buenos Aires, Argentina. <br>
+      Over time, I was able to discover a great  passion for programming and problem  solving by
+      engaging with regular study and  commitment in my continuous learning  development.
+      My goal is to be able to add value to  organizations and to continue to develop  professionally my career in this field of work.
+    </p>
+    <mat-divider></mat-divider>
+    <span class="about-me__text__title"><strong>Skills</strong></span>
+
+      <div class="about-me__text__skills__container">
+        <div *ngFor="let icon of skillsIcons" class="about-me__text__skills">
+          <i [class]="icon.path"></i>
+          <span class="about-me__text__skills__pop-up">{{icon.name}}</span>
+        </div>
+        <div *ngFor="let icon of skillsIconsSvg" class="about-me__text__skills">
+          <img [class]="icon.class" [src]="icon.path">
+          <span class="about-me__text__skills__pop-up">{{icon.name}}</span>
+        </div>
+      </div>
+
+    <mat-divider></mat-divider>
+    <span class="about-me__text__title"><strong>Courses</strong></span>
+    <ul>
+      <li *ngFor="let course of courses">{{course}}</li>
+      <!-- TODO: poner margin bottom a cada uno de los cursos,
+         alguna decoracion? -->
+    </ul>
+  </div>
+</section>

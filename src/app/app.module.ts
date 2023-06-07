@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SideMenuComponent } from './shared/side-menu/side-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   exports:[
     SideMenuComponent
