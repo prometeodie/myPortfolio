@@ -1,0 +1,70 @@
+@import '../../../shared/scss/variables.scss';
+
+@mixin actionHover($color){
+  color: $color;
+  border-color: $color;
+}
+.div-separador{
+  height: 10rem;
+}
+
+.my-projects{
+
+  &__title{
+    margin-left: 1rem;
+  }
+
+  &__card{
+    color: $font-color;
+    margin: 0.8rem 0;
+
+    &__header{
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__paragraph{
+      margin: 0.5rem 0;
+    }
+  }
+
+}
+
+.my-projects__card__actions__anchor{
+  text-decoration: none;
+  border: 0.3px solid rgba(102, 102, 102, 0.5);
+  color:$font-color;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 1s ease;
+
+  &:hover{
+    @include actionHover($facy-letter-color2);
+  }
+
+  &--aqua:hover{
+    @include actionHover($facy-letter-color1);
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width:600px) {
+  .my-projects__card{
+    margin: 1rem;
+
+  }
+  .my-projects__card__img{
+    max-width: 500px;
+  }
+}
+
+@media (min-width:801px) {
+
+  .my-projects{
+    margin-left: 5rem;
+
+  }
+
+}

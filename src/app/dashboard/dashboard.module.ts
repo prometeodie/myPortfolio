@@ -7,6 +7,7 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,7 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     DashboardRoutingModule,
     MaterialModule
   ]

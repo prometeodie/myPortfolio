@@ -9,10 +9,10 @@ import { Menu } from 'src/app/dashboard/interfaces';
 export class SideMenuComponent {
 
   menu: Menu[]=[
-      {route:'portfolio/home'    , class:'menu__icon fa-solid fa-house'},
-      {route:'portfolio/about-me', class:'menu__icon fa-solid fa-user-secret'},
-      {route:'portfolio/contact' , class:'menu__icon fa-solid fa-code'},
-      {route:'portfolio/projects', class:'menu__icon fa-solid fa-envelope'}
+      {name:'Home',    route:'portfolio/home'    , class:'menu__icon fa-solid fa-house'},
+      {name:'About me',route:'portfolio/about-me', class:'menu__icon fa-solid fa-user-secret'},
+      {name:'Projects', route:'portfolio/projects' , class:'menu__icon fa-solid fa-code'},
+      {name:'Contact',route:'portfolio/contact', class:'menu__icon fa-solid fa-envelope'}
   ]
 
   socialMedia:Menu[]=[

@@ -28,14 +28,12 @@
 
     &:hover .about-me__text__skills__pop-up{
       display: block;
-      opacity: 1;
     }
   }
 
   &__text__skills__pop-up{
     position: absolute;
     display: none;
-    opacity: 0;
     background-color: #000;
     white-space: nowrap;
     padding: 0.8rem;
@@ -52,6 +50,14 @@
       border-color: #0000 #0000 #000 #0000 ;
     }
   }
+
+  &__text__courses{
+    margin-bottom: 1rem;
+  }
+
+  &__mat-divider{
+    margin: 1rem 0;
+  }
 }
 
   .about-me__text__skills__icon{
@@ -65,17 +71,16 @@
 }
 
 
-// MEDIA QUERIES
-@media (min-width:320px) {}
-@media (min-width:480px) {}
+// MEDIA QUERIEs
+
 @media (min-width:801px) {
   .about-me{
+    margin-left: 5.5rem;
 
     &__text{
-     margin-left: 6rem;
      width: 70%;
     }
+
   }
 }
-@media (min-width:1025px) {}
-@media (min-width:1281px) {}
+

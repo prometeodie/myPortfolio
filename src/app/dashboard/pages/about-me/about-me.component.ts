@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Icon } from '../../interfaces';
 
-
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
@@ -36,7 +35,7 @@ export class AboutMeComponent implements OnInit{
 
   ngOnInit(): void {
     this.currentYear=new Date();
-    this.getYears()
+    this.getYears();
   }
 
 

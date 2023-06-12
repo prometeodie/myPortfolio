@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class ContactMeComponent {
 
+  private fb = inject(FormBuilder);
+
+  public myForm = this.fb.group({
+    name:['',[Validators.minLength(2),Validators.required]],
+    email:['',[Validators.required]],
+    subject:['',[Validators.required]],
+    menssage:['',[Validators.required]]
+  })
+
+
+  submitForm(){
+    console.log('hola');
+  }
 }
