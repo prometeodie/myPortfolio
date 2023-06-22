@@ -1,5 +1,14 @@
 @import '../../../shared/scss/variables.scss';
 
+@mixin sliceAnimation(){
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+}
+
 .about-me-container,
 .about-me__text__skills{
   position: relative;
@@ -9,6 +18,7 @@
   overflow: hidden;
 }
 .about-me{
+  padding: 0 1rem;
 
   &__title{
     margin-bottom: 1rem;
@@ -77,18 +87,94 @@
   font-weight: 700;
   cursor: pointer;
   bottom: 1rem;
+  text-shadow: $anaglyph-color;
+  transition: 2s;
 
   &--left{
     left: 1rem;
+    transition: 2s;
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+      &::after{
+        content: 'Home';
+        text-shadow: $anaglyph-color;
+        @include sliceAnimation();
+      }
+
+      &:hover:after {
+        animation: 1s glitch;
+        animation-timing-function: steps(2, end);
+      }
+    }
   }
 
   &--right{
     right: 1rem;
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+      &::before{
+        @include sliceAnimation();
+        content: 'Projects';
+        text-shadow: $anaglyph-color;
+      }
+      &:hover:before {
+        animation: 1s glitch;
+        animation-timing-function: steps(2, end);
+      }
+    }
+  }
+
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-30px, -20px);
+    }
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(20px, 20px);
+    }
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, 20px);
+    }
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 15px);
+    }
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-15px, 0px);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(15px, 0px);
+    }
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(15px, 20px);
+    }
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-20px, 20px);
+    }
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(30px, -20px);
+    }
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-0px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+    }
   }
 
   &__icon{
     padding: 0.5rem;
   }
+
 }
 
   .about-me__text__skills__icon{
@@ -100,8 +186,9 @@
   width:2rem;
   margin: 0.3rem;
 }
+
 .about-me__anaglyph-efect{
-  box-shadow: (2px 2px rgba(19, 255, 235, 0.747),1px -1px rgba(19, 255, 235, 0.747), -2px -2px rgba(255, 69, 85, 0.747),-1px 1px rgba(255, 69, 85, 0.747));
+  box-shadow: $anaglyph-color;
 }
 
 

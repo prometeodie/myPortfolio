@@ -58,6 +58,7 @@
 
         &::after{
           content: 'About Me';
+          text-shadow: 0 0 5px $facy-letter-color1;
         }
       }
     }
@@ -70,6 +71,7 @@
 
         &::before{
           content: 'Contact';
+          text-shadow: 0 0 5px $facy-letter-color2; ;
         }
       }
     }
