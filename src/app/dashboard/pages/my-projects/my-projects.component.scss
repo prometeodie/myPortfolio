@@ -4,11 +4,13 @@
   color: $color;
   border-color: $color;
 }
+
 .div-separador{
   height: 10rem;
 }
 
 .my-projects{
+  position:relative;
 
   &__title{
     margin-left: 1rem;
@@ -28,6 +30,50 @@
     }
   }
 
+  &__btn{
+    padding: 0.5rem 1rem;
+    position: fixed;
+    color: $font-color;
+    background-color: transparent;
+    border: 0.5px solid $font-color;
+    border-radius: 100px;
+    transition: 1s ease;
+    font-weight: 700;
+    cursor: pointer;
+
+    &__icon{
+      padding: 0 0.5rem;
+    }
+    &--left,
+    &--right{
+      bottom: 1rem;
+    }
+
+    &--left{
+      left: 1rem;
+
+      &:hover{
+        box-shadow: 0 0 30px $facy-letter-color1;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        &::after{
+          content: 'About Me';
+        }
+      }
+    }
+
+    &--right{
+      right: 1rem;
+      &:hover{
+        box-shadow: 0 0 30px $facy-letter-color2;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        &::before{
+          content: 'Contact';
+        }
+      }
+    }
+  }
 }
 
 .my-projects__card__actions__anchor{
@@ -64,6 +110,19 @@
 
   .my-projects{
     margin-left: 5rem;
+
+    &__btn--left,
+    &__btn--right{
+      bottom: 1rem;
+    }
+
+    &__btn--left{
+      left: 7rem;
+    }
+
+    &__btn--right{
+      right: 2rem;
+    }
 
   }
 
