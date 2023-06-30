@@ -1,0 +1,209 @@
+
+.dev-animation__img__pc-screen,
+.dev-animation__img__bar__container,
+.dev-animation__img__animated-bars__container,
+.dev-animation__img__animated-bars__block-container{
+  position: absolute;
+}
+
+.dev-animation,
+.dev-animation__img__bars,
+.dev-animation__img__animated-bars
+{
+  position: relative;
+}
+.dev-animation,
+.dev-animation__img__bars,
+.dev-animation__img__animated-bars__container,
+.dev-animation__img__animated-bars__block-container{
+  display: flex;
+}
+
+.dev-animation__img__bars,
+.dev-animation__img__animated-bars__container{
+    flex-direction: column;
+}
+
+.dev-animation,
+.dev-animation__img__bars{
+  width: 100%;
+}
+
+.dev-animation{
+  justify-content: center;
+
+  &__img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90vw;
+
+    animation: lightBg 3s ease-in infinite alternate;
+  }
+
+  &__img__pc-screen{
+    left: 23vw;
+    top: 19.2vw;
+    width: 45.4vw;
+
+    //paralelogram
+    border-right: 6.1vw solid transparent;
+    border-left: 6.5vw solid transparent;
+    border-top: 16.9vw solid #181a1a;
+  }
+
+  &__img__bar__container{
+    border-right: 0.5px solid rgba(255, 166, 0, 0.466) ;
+    height: 16.5vw;
+    left: 26.1vw;
+    top: 19.2vw;
+    width: 12.4vw;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+  }
+
+  &__img__bars{
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  &__img__bar{
+    background-color: rgb(119, 119, 119);
+    border-radius: 50px;
+    height: 0.5vw;
+    width: 10vw;
+  }
+
+  &__img__animated-bars__container{
+    flex-direction: column;
+    height: 16.5vw;
+    left: 40.3vw;
+    overflow: hidden;
+    padding: 1vw;
+    top: 19.2vw;
+    transform: skew(20deg);
+    width: 33.8vw;
+  }
+
+  .dev-animation__img__animated-bars{
+    height: 2vw;
+
+    &__block-1{animation: sliding-bars 5s      ease-in-out infinite alternate;}
+    &__block-2{animation: sliding-bars 5s 1s   ease-in-out infinite alternate;}
+    &__block-3{animation: sliding-bars 5s 1.5s ease-in-out infinite alternate;}
+    &__block-4{animation: sliding-bars 5s 2s   ease-in-out infinite alternate;}
+    &__block-5{animation: sliding-bars 5s 2.5s ease-in-out infinite alternate;}
+    &__block-6{animation: sliding-bars 5s 3s   ease-in-out infinite alternate;}
+  }
+  .dev-animation__img__bar--coloful{
+    background-color: rgba(65, 192, 251);
+    filter:  drop-shadow(0 0 80px);
+    animation: bar-colors 3s infinite ;
+  }
+
+  // animation to slide the bars
+  @keyframes sliding-bars {
+    0%,50%{
+     transform: translate(-40vw);
+    }
+    60%,100%{
+      transform: translate(0);
+    }
+  }
+
+  // animation to change the bar's color
+  @keyframes bar-colors {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+
+  // Background light
+  @keyframes lightBg {
+    0%,50%{
+      filter: drop-shadow(0 0 10px rgb(187, 110, 170));
+    }
+    51%,100%{
+      filter: drop-shadow(0 0 20px rgb(187, 110, 170));
+    }
+  }
+
+.dev-animation__img__bar--margin{
+  margin: 0.8vw 0.5vw;
+}
+
+// diferent size for the bars
+.dev-animation__img__bar--big{
+  width:16vw ;
+}
+
+.dev-animation__img__bar--medium{
+  width:10vw ;
+}
+
+.dev-animation__img__bar--short{
+  width: 3vw;
+}
+
+@media (min-width:801px) {
+
+  .dev-animation{
+    justify-content: flex-start;
+    &__img{
+      width: 50vw;
+    }
+
+    &__img__pc-screen{
+      border-left: 3.3vw solid transparent;
+      border-right: 3.5vw solid transparent;
+      border-top: 9.4vw solid #181a1a;
+      left: 10.1vw;
+      left: 10.2vw;
+      top: 10.7vw;
+      width: 25.2vw;
+      width: 25.2vw;
+    }
+
+    &__img__bar__container{
+      height: 9vw;
+      left: 12.3vw;
+      top: 10.9vw;
+      width: 5.6vw;
+    }
+
+    &__img__bar{
+      height: 0.3vw;
+      width: 4.8vw;
+    }
+
+    &__img__animated-bars__container{
+      height: 7.4vw;
+      left: 17.5vw;
+      top: 10.3vw;
+      width: 25.1vw;
+    }
+  }
+
+.dev-animation__img__bar--big{
+  width:8.8vw ;
+}
+
+.dev-animation__img__bar--medium{
+  width:5.5vw ;
+}
+
+.dev-animation__img__bar--short{
+  width: 1.66vw;
+}
+}
+

@@ -6,3 +6,4 @@ export * from './icon.interface';
 export * from './projects.interface';
 export * from './error.messages.interface';
 export * from './form-response.interface';
+export * from './block-bars.interface';

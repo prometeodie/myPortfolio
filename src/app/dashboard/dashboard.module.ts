@@ -9,6 +9,7 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { MaterialModule } from '../material/material.module';
+import { DevAnimationComponent } from './components/dev-animation/dev-animation.component';
 
 
 
@@ -26,6 +27,7 @@ import { MaterialModule } from '../material/material.module';
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
+    DevAnimationComponent
   ]
 })
 export class DashboardModule { }

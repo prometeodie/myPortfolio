@@ -1,10 +1,12 @@
 
-<div class="div-separador">
-  <!-- TODO:borrar este div, la clase y poner animacion -->
-</div>
-
 <section class="my-projects">
   <h1 class="my-projects__title">My Projects</h1>
+  <dev-animation
+  data-aos="fade-up-right"
+  data-aos-offset="500"
+  data-aos-easing="ease-in-sine"/>
+
+  <i class="my-projects__arrow fa-solid fa-down-long"></i>
 
   <mat-card  *ngFor="let project of projects"
              class="my-projects__card"

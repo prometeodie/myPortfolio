@@ -1,0 +1,20 @@
+
+<section class="dev-animation">
+  <img class="dev-animation__img" src="../../../../assets/svg/dev-animation-img.svg" alt="developer">
+  <div class="dev-animation__img__pc-screen"></div>
+
+  <div class="dev-animation__img__bar__container">
+    <div class="dev-animation__img__bars">
+      <div class="dev-animation__img__bar" *ngFor="let bar of [].constructor(barsAmount)"></div>
+    </div>
+  </div>
+  <div class="dev-animation__img__animated-bars__container">
+    <!-- animated Bars -->
+      <div *ngFor="let blockBars of animatedBars" [class]="blockBars.container">
+        <div [class]="blockBars.block">
+          <div *ngFor="let bar of blockBars.bars" [class]="bar"></div>
+        </div>
+      </div>
+  </div>
+</section>
+
