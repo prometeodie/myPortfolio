@@ -79,7 +79,6 @@
 }
 
 .home{
- background-image: url('../../../../assets/img/fondo-abstracto-tecnologia-moleculas-formas-poligonales-conectando-puntos-lineas-estructura-conexion-visualizacion-big-data_7247-3606.jpg');
  background-repeat: no-repeat;
  background-size: cover;
  display: flex;
@@ -174,6 +173,7 @@
     @include translate(17rem);
   }
 }
+
 @media (min-width:1025px) {
 
     .home__text--active{
@@ -184,6 +184,7 @@
       right: 12%;
     }
  }
+
 @media (min-width:1281px) {
   .home__big-letter{
     right: 16%;

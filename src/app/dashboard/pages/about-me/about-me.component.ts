@@ -8,7 +8,7 @@ import { Icon } from '../../interfaces';
 })
 export class AboutMeComponent implements OnInit{
   public yearsOld:number = 0
-  private currentYear!: Date;
+  private date!: Date;
   public skillsIcons: Icon[] = [
     {name:'JavaScript',path:'about-me__text__skills__icon fa-brands fa-square-js'},
     {name:'Css 3',path:'about-me__text__skills__icon fa-brands fa-css3-alt'},
@@ -34,29 +34,32 @@ export class AboutMeComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.currentYear=new Date();
+    this.date=new Date();
     this.getYears();
   }
 
 
   getYears():void{
-    const currentDay = this.currentYear.getDate();
-    const currentMonth = this.currentYear.getDay();
-    const currentYear = this.currentYear.getFullYear();
-
-    if(currentMonth < 6)   this.yearsOld = currentYear - 1992-1;
-    else {
-      if(currentMonth > 6)   this.yearsOld = currentYear - 1992;
-      else{
+    const currentDay = this.date.getDate();
+    const currentMonth = this.date.getMonth()+1;
+    const currentYear = this.date.getFullYear();
+    console.log(currentMonth)
+      if(currentMonth < 6)  this.yearsOld = this.yearsCalculated(currentYear, 1992, 1);
+      else {
         if(currentMonth === 6) {
-          if(currentDay < 13){
-            this.yearsOld = currentYear - 1992-1;
-          }else{
-            this.yearsOld = currentYear - 1992;
-          }
+            if(currentDay < 13){
+              this.yearsOld = this.yearsCalculated(currentYear, 1992, 1);
+            }else{
+              this.yearsOld =  this.yearsCalculated(currentYear, 1992, 0);
+            }
+        }else{
+          this.yearsOld = this.yearsCalculated(currentYear, 1992, 0)
+        }
+
       }
+    }
 
-    }}
-}
-
+    yearsCalculated(currentYear:number, birthYear:number,numberToSubstact:number){
+        return currentYear - birthYear - numberToSubstact;
+    }
 }

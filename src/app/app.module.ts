@@ -8,17 +8,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgParticlesModule } from "ng-particles";
+
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    MaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    BrowserModule,
+    HttpClientModule,
+    MaterialModule,
+    NgParticlesModule
   ],
   exports:[
     SideMenuComponent

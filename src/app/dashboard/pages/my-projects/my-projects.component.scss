@@ -5,25 +5,8 @@
   border-color: $color;
 }
 
-.my-projects{
-  position:relative;
-
-  &__title{
-    margin-left: 1rem;
-    margin-top: 5rem;
-  }
-
-  &__arrow{
-    position: absolute;
-    font-size: 10px;
-    top: 5%;
-    opacity: 0;
-    // TODO:tienen que terminar en 15%
-    right: 20%;
-    animation: arrow-motion 4s ease-in-out 1s 1;
-    animation-fill-mode: forwards;
-
-  }
+// mixin to solve the problem with media queries and keyframes
+@mixin animationArrow($size1, $size2, $size3){
 
   @keyframes arrow-motion {
 
@@ -33,57 +16,35 @@
     }
     25%,50%{
       opacity: 1;
-      top: 15%;
-      rotate: 90deg;
+      top: $size1;
+      transform: rotate(90deg);
     }
     50%,75%{
-      rotate: 280deg;
-      top: 10%;
+      transform: rotate(280deg);
+      top: $size2;
       right: 40%;
     }
-    75%,90%{
-      rotate:340deg;
-      top:20%;
+    75%,100%{
+      transform: rotate(340deg);
+      top:$size3;
       right:18%;
-    }
-    90%,100%{
-      top:20%;
-      font-size:100px;
+      font-size:150px;
+      color: $arrow-Color;
     }
 
-    // 60%,70%{
-    //   top: 5%;
-    //   rotate: 240deg;
-    //   right: 35%;
-    // }
-    // 70%,80%{
-    //   right: 30%;
-    // }
-    // 80%, 85%{
-    //   right: 30%;
-    //   rotate: 280deg;
-    // }
-    // 85%{
-    //   top:10%;
-    //   rotate:320deg;
-    //   right: 20%;
-    // }
-    // 85%,95%{
-    //   rotate: 360deg;
-    //   top: 10%;
-    // }
-    // 95%,100%{
-    //   top:15%
-    // }
-    // 50%, 75%{
-    //   right: 30%;
-    // }
+  }
+}
 
-    // 75%,90%{
-    //   color: blue;
-    //   rotate: 120%;
-    // }
+.my-projects{
+  position:relative;
 
+  &__title{
+    margin-left: 1rem;
+    margin-top: 5rem;
+  }
+
+  &__arrow{
+    display: none;
   }
 
   &__card{
@@ -166,6 +127,16 @@
   }
 }
 
+@keyframes arrow-lights {
+  0%,50%{
+    opacity: 0.2;
+  }
+  50%,100%{
+    opacity: 1;
+    filter: drop-shadow(0 0 50px $devAnimationDropShadowColor);
+  }
+}
+
 // MEDIA QUERIES
 
 @media (min-width:600px) {
@@ -200,6 +171,30 @@
       right: 2rem;
     }
 
-  }
+    &__arrow{
+      position: absolute;
+      display: block;
+      font-size: 10px;
+      top: 5%;
+      opacity: 0;
+      right: 20%;
+      @include animationArrow(10%,5%,13%);
+      animation: arrow-motion 4s ease-in-out forwards, arrow-lights 1s ease-in-out  alternate infinite;
+    }
 
+  }
+}
+
+@media (min-width:1025px) {
+  .my-projects__arrow{
+    @include animationArrow(13%,8%,17%);
+    animation: arrow-motion 4s ease-in-out forwards, arrow-lights 2s ease-in-out 3s alternate infinite;
+  }
+}
+
+@media (min-width:1281px) {
+  .my-projects__arrow{
+    @include animationArrow(15%,10%,22%);
+    animation: arrow-motion 4s ease-in-out forwards, arrow-lights 2s ease-in-out 3s alternate infinite;
+  }
 }
