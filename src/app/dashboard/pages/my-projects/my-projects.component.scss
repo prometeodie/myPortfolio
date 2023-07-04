@@ -37,6 +37,7 @@
 
 .my-projects{
   position:relative;
+  overflow: hidden;
 
   &__title{
     margin-left: 1rem;
@@ -179,23 +180,28 @@
       top: 5%;
       opacity: 0;
       right: 20%;
-      @include animationArrow(10%,5%,13%);
-      animation: arrow-motion 4s ease-in-out forwards, arrow-lights 1s ease-in-out  alternate infinite;
+      @include animationArrow(10%,5%,65vh);
+      animation: arrow-motion 3s ease-in-out forwards, arrow-lights 1s ease-in-out  alternate infinite;
     }
 
   }
 }
 
 @media (min-width:1025px) {
+
+  .my-projects__animation{
+    display: block;
+    margin-left: 15rem
+  }
   .my-projects__arrow{
-    @include animationArrow(13%,8%,17%);
-    animation: arrow-motion 4s ease-in-out forwards, arrow-lights 2s ease-in-out 3s alternate infinite;
+    @include animationArrow(13%,8%,65vh);
+    animation: arrow-motion 3s ease-in-out forwards, arrow-lights 2s ease-in-out 3s alternate infinite;
   }
 }
 
 @media (min-width:1281px) {
   .my-projects__arrow{
-    @include animationArrow(15%,10%,22%);
-    animation: arrow-motion 4s ease-in-out forwards, arrow-lights 2s ease-in-out 3s alternate infinite;
+    @include animationArrow(15%,10%,65vh);
+    animation: arrow-motion 3s ease-in-out forwards, arrow-lights 2s ease-in-out 3s alternate infinite;
   }
 }

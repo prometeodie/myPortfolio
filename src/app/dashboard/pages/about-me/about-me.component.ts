@@ -32,8 +32,7 @@ export class AboutMeComponent implements OnInit{
     'Udemy RXJS Course ReactiveX - RxJs: De cero hasta los detalles | 2023 |Fernando Herrera'
   ]
 
-  public cvLink: string = 'https://drive.google.com/uc?export=download&id=1g80mqhEWnLJBwbnG32MvwEvEbK0EeVw5';
-
+  public cvLink: string = 'https://drive.google.com/uc?export=download&id=1R7YMCaAFpAfdgSHgsJz5DSkQrLnvAKaR';
 
   ngOnInit(): void {
     this.date=new Date();

@@ -75,6 +75,8 @@
 
 .dev-animation{
   justify-content: center;
+  display: block;
+
 
   &__img{
     background-position: center;
@@ -85,11 +87,11 @@
   }
 
   &__img__pc-screen{
-    @include pcScreen(23vw, 19.2vw, 45.4vw, 6.1vw, 6.5vw, 16.9vw )
+    @include pcScreen(18vw, 19.2vw, 45.4vw, 6.1vw, 6.5vw, 16.9vw )
   }
 
   &__img__bar__container{
-    @include imgBarContainer(0.5px, 16.5vw, 26.1vw, 19.2vw, 12.4vw)
+    @include imgBarContainer(0.5px, 16.5vw, 21vw, 19.2vw, 12.4vw)
   }
 
   &__img__bars{
@@ -105,7 +107,7 @@
   }
 
   &__img__animated-bars__container{
-  @include imgAnimatedBarsContainer(15vw, 40.3vw, 1vw, 19.2vw, 33.8vw );
+  @include imgAnimatedBarsContainer(15vw, 34.4vw, 1vw, 19.2vw, 33.8vw );
   }
 
   .dev-animation__img__animated-bars{
@@ -163,10 +165,13 @@
   width: 3vw;
 }
 
+// MEDIA QUERIES
+
 @media (min-width:801px) {
 
   .dev-animation{
     justify-content: flex-start;
+    height: 80vh;
     &__img{
       width: 50vw;
     }

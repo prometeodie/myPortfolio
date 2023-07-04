@@ -116,14 +116,21 @@
     transition:2s;
     opacity: 0;
     z-index: 2;
-
-      &--active{
-        text-shadow: 20px 10px $facy-letter-color1, 35px 20px $facy-letter-color3;
-        color: $facy-letter-color2;
-        transform: rotate(335deg);
-        opacity: 100%;
-      }
+    animation: bigLetter 2s 1s ease forwards;
   }
+
+  @keyframes bigLetter {
+    0%,40%{
+      transform: rotate(0deg);
+    }
+    40%,100%{
+      text-shadow: 20px 10px $facy-letter-color1, 35px 20px $facy-letter-color3;
+      color: $facy-letter-color2;
+      transform: rotate(335deg);
+      opacity: 1;
+    }
+  }
+
 
   &__button{
     @include button(transparent, #00ffff, 0.4rem 1.8rem, #01ffffac, #01ffffac);

@@ -26,5 +26,4 @@ export class HomeComponent implements AfterViewInit {
     },1000)
   }
 
-
 }
