@@ -70,13 +70,13 @@ export class AppComponent implements OnInit {
                   default: OutMode.bounce,
               },
               random: false,
-              speed: 2,
+              speed: 1,
               straight: false,
           },
           number: {
               density: {
                   enable: true,
-                  area: 1200,
+                  area: 3000,
               },
               value: 80,
           },
@@ -93,12 +93,9 @@ export class AppComponent implements OnInit {
       detectRetina: true,
   };
 
-  particlesLoaded(container: Container): void {
-      console.log(container);
-  }
+  particlesLoaded(container: Container): void {}
 
   async particlesInit(engine: Engine): Promise<void> {
-      console.log(engine);
       await loadFull(engine);
   }
 

@@ -32,6 +32,8 @@ export class AboutMeComponent implements OnInit{
     'Udemy RXJS Course ReactiveX - RxJs: De cero hasta los detalles | 2023 |Fernando Herrera'
   ]
 
+  public cvLink: string = 'https://drive.google.com/uc?export=download&id=1g80mqhEWnLJBwbnG32MvwEvEbK0EeVw5';
+
 
   ngOnInit(): void {
     this.date=new Date();
@@ -43,7 +45,6 @@ export class AboutMeComponent implements OnInit{
     const currentDay = this.date.getDate();
     const currentMonth = this.date.getMonth()+1;
     const currentYear = this.date.getFullYear();
-    console.log(currentMonth)
       if(currentMonth < 6)  this.yearsOld = this.yearsCalculated(currentYear, 1992, 1);
       else {
         if(currentMonth === 6) {

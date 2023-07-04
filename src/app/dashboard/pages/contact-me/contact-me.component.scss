@@ -64,25 +64,25 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
+      z-index: 1;
 
-
-
-      &:after {
-        content: "";
+      &__back-ground{
         background-color: $btn-to-projects-color;
         width: 100%;
-        z-index: -1;
         position: absolute;
+        z-index: -1;
         height: 100%;
         top: 7px;
         left: 7px;
         transition: 0.2s;
-      }
 
-      &:hover:after {
-        rotate: 5deg;
-        top: 0px;
-        left: 0px;
+      }
+      &:hover {
+        .contact-me__back-btn__back-ground{
+          rotate: 5deg;
+          top: 0px;
+          left: 0px;
+        }
       }
 
       &__icon{

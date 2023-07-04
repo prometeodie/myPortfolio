@@ -1,4 +1,48 @@
 
+
+@mixin pcScreen($left,$top,$width,$borderRight,$borderLeft,$borderTop){
+  left:$left;
+  top:$top;
+  width:$width;
+
+  //paralelogram
+  border-right: $borderRight solid transparent;
+  border-left: $borderLeft solid transparent;
+  border-top: $borderTop solid #181a1a;
+}
+
+@mixin imgBarContainer($borderRight, $height, $left, $top, $width){
+  border-right: $borderRight solid rgba(255, 166, 0, 0.466) ;
+  height: $height;
+  left: $left;
+  top: $top;
+  width: $width;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+}
+
+
+@mixin imgBar($height,$width){
+    background-color: rgb(119, 119, 119);
+    border-radius: 50px;
+    height: $height;
+    width:  $width;
+}
+
+@mixin imgAnimatedBarsContainer($height, $left, $padding, $top, $width){
+  flex-direction: column;
+  height: $height;
+  left: $left;
+  overflow: hidden;
+  padding: $padding;
+  top: $top;
+  transform: skew(20deg);
+  width: $width;
+}
+
 .dev-animation__img__pc-screen,
 .dev-animation__img__bar__container,
 .dev-animation__img__animated-bars__container,
@@ -41,27 +85,11 @@
   }
 
   &__img__pc-screen{
-    left: 23vw;
-    top: 19.2vw;
-    width: 45.4vw;
-
-    //paralelogram
-    border-right: 6.1vw solid transparent;
-    border-left: 6.5vw solid transparent;
-    border-top: 16.9vw solid #181a1a;
+    @include pcScreen(23vw, 19.2vw, 45.4vw, 6.1vw, 6.5vw, 16.9vw )
   }
 
   &__img__bar__container{
-    border-right: 0.5px solid rgba(255, 166, 0, 0.466) ;
-    height: 16.5vw;
-    left: 26.1vw;
-    top: 19.2vw;
-    width: 12.4vw;
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    transform: skew(20deg);
+    @include imgBarContainer(0.5px, 16.5vw, 26.1vw, 19.2vw, 12.4vw)
   }
 
   &__img__bars{
@@ -73,25 +101,16 @@
   }
 
   &__img__bar{
-    background-color: rgb(119, 119, 119);
-    border-radius: 50px;
-    height: 0.5vw;
-    width: 10vw;
+  @include imgBar(0.5vw, 10vw);
   }
 
   &__img__animated-bars__container{
-    flex-direction: column;
-    height: 16.5vw;
-    left: 40.3vw;
-    overflow: hidden;
-    padding: 1vw;
-    top: 19.2vw;
-    transform: skew(20deg);
-    width: 33.8vw;
+  @include imgAnimatedBarsContainer(15vw, 40.3vw, 1vw, 19.2vw, 33.8vw );
   }
 
   .dev-animation__img__animated-bars{
     height: 2vw;
+    padding: 0.1vw 0;
 
     &__block-1{animation: sliding-bars 5s      ease-in-out infinite alternate;}
     &__block-2{animation: sliding-bars 5s 1s   ease-in-out infinite alternate;}
@@ -153,34 +172,22 @@
     }
 
     &__img__pc-screen{
-      border-left: 3.3vw solid transparent;
-      border-right: 3.5vw solid transparent;
-      border-top: 9.4vw solid #181a1a;
-      left: 10.1vw;
-      left: 10.2vw;
-      top: 10.7vw;
-      width: 25.2vw;
-      width: 25.2vw;
+      @include pcScreen(10.2vw, 10.7vw, 25.2vw, 3.3vw, 3.5vw, 9.4vw )
+
     }
 
     &__img__bar__container{
-      height: 9vw;
-      left: 12.3vw;
-      top: 10.9vw;
-      width: 5.6vw;
+      @include imgBarContainer(0.5px, 9vw, 12.3vw, 10.9vw, 5.6vw);
     }
 
     &__img__bar{
-      height: 0.3vw;
-      width: 4.8vw;
+    @include imgBar(0.3vw, 4.8vw);
     }
 
     &__img__animated-bars__container{
-      height: 7.4vw;
-      left: 17.5vw;
-      top: 10.3vw;
-      width: 25.1vw;
+    @include imgAnimatedBarsContainer(7.4vw,17.5vw,0.5vw,10.3vw,25.1vw);
     }
+
   }
 
 .dev-animation__img__bar--big{
@@ -194,5 +201,45 @@
 .dev-animation__img__bar--short{
   width: 1.66vw;
 }
+}
+
+@media (min-width:1025px) {
+
+
+  .dev-animation{
+  &__img{
+    width: 30vw;
+  }
+
+  &__img__pc-screen{
+    @include pcScreen( 6.12vw, 6.42vw, 15.12vw, 1.98vw, 2.1vw, 5.64vw)
+
+  }
+
+  &__img__bar__container{
+    @include imgBarContainer(0.5px, 5.4vw, 7vw, 6.4vw, 3.8vw);
+  }
+
+  &__img__bar{
+  @include imgBar(0.2vw, 2.88vw);
+  }
+
+  &__img__animated-bars__container{
+  @include imgAnimatedBarsContainer(4.44vw, 10.7vw, 0.5vw, 5.88vw, 10.76vw);
+  }
+}
+
+.dev-animation__img__bar--big{
+  width:4vw ;
+}
+
+.dev-animation__img__bar--medium{
+  width:3.2vw ;
+}
+
+.dev-animation__img__bar--short{
+  width: 1.2vw;
+}
+
 }
 
