@@ -10,6 +10,7 @@ import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { MaterialModule } from '../material/material.module';
 import { DevAnimationComponent } from './components/dev-animation/dev-animation.component';
+import { DayNightAnimationComponent } from './components/day-night-animation/day-night-animation.component';
 
 
 
@@ -27,7 +28,8 @@ import { DevAnimationComponent } from './components/dev-animation/dev-animation.
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    DevAnimationComponent
+    DevAnimationComponent,
+    DayNightAnimationComponent
   ]
 })
 export class DashboardModule { }

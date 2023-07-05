@@ -1,0 +1,118 @@
+
+
+@mixin beams($size, $bgColor){
+        content:"";
+        position: absolute;
+        top: calc(50% - calc($size / 2));
+        left: calc(50% - calc($size / 2));
+        display: block;
+        width: $size;
+        height: $size;
+        background-color: $bgColor;
+        border-radius: 50%;
+}
+
+@mixin  holeSizeAndPosition($size, $top, $left){
+  top:$top;
+  left:$left;
+  width: $size;
+  height: $size;
+}
+
+.day-night-animation{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__window{
+    position: relative;
+    // overflow: hidden;
+    width: 20rem;
+    height: 30rem;
+    border: 10px solid rgba(193, 138, 62, 0.425);
+    outline: 10px solid rgba(156, 99, 18, 0.425);
+    border-bottom: 25px solid rgba(193, 138, 62, 0.425);
+    border-top-right-radius: 45% ;
+    border-top-left-radius: 45% ;
+    margin-top: 1rem;
+
+    &:before{
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 149%;
+      background-color: rgba(0, 255, 255, 0.05);
+      bottom: -2.4rem;
+      right: 7.8rem;
+      rotate: 41deg;
+    }
+
+    &__sun{
+      position: relative;
+      display: block;
+      width: 8rem;
+      height: 8rem;
+      background-color: rgb(247, 247, 194);
+      border-radius: 50%;
+      // sun beams
+      &::before{
+        @include beams(10rem, rgba(247, 247, 194, 0.514));
+      }
+      &::after{
+        @include beams(12.5rem, rgba(247, 247, 194, 0.295));
+      }
+    }
+
+    &__moon{
+      position: relative;
+      display: block;
+      width: 7rem;
+      height: 7rem;
+      background-color: rgb(236, 236, 222);
+      border-radius: 50%;
+      z-index: 1;
+      //moon beams
+      &::before{
+        @include beams(9rem,rgba(236, 236, 222, 0.247));
+      }
+      &::after{
+        @include beams(11rem, rgba(236, 236, 222, 0.247));
+      }
+
+      &__hole{
+        position: absolute;
+        display: block;
+        background-color: rgba(128, 128, 128, 0.137);
+        border-radius: 50%;
+
+        //each class is a diferent moon hole
+        &--one{
+          @include holeSizeAndPosition(2rem, 4rem, 4rem)
+        };
+        &--two{
+          @include holeSizeAndPosition(1rem,0.1rem, 4rem)
+        };
+        &--tree{
+          @include holeSizeAndPosition(0.5rem,4rem, 0.5rem)
+        };
+        &--four{
+          @include holeSizeAndPosition(0.5rem,4.5rem, 1.5rem)
+        };
+        &--five{
+          @include holeSizeAndPosition(0.8rem,0.4rem, 2rem)
+        };
+        &--six{
+          @include holeSizeAndPosition(0.4rem,1.2rem, 2rem)
+        };
+        &--seven{
+          @include holeSizeAndPosition(0.4rem,1.2rem, 2.6rem)
+        };
+        &--eight{
+          @include holeSizeAndPosition(1rem,2.7rem, 5.9rem)
+        };
+      }
+    }
+  }
+}

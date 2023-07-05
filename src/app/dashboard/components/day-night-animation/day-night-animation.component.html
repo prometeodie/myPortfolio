@@ -1,1 +1,8 @@
-<p>day-night-animation works!</p>
+<section class="day-night-animation">
+  <div class="day-night-animation__window">
+    <div class="day-night-animation__window__sun"></div>
+    <div class="day-night-animation__window__moon">
+      <div [class]="hole" *ngFor="let hole of holes"></div>
+    </div>
+  </div>
+</section>
