@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgParticlesModule } from 'ng-particles';
 
 @Component({
   selector: 'app-day-night-animation',
@@ -20,4 +21,10 @@ export class DayNightAnimationComponent {
     'day-night-animation__window__moon__hole day-night-animation__window__moon__hole--eight'
   ]
 
-}
+  public animationStart:boolean = true;
+
+  animationFinish(){
+    this.animationStart = !this.animationStart;
+  }
+
+ }
