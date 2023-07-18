@@ -1,0 +1,9 @@
+
+<section class="neon-animation">
+  <div class="neon-animation__front-end-word neon-animation__neon-efect">
+    <span  [ngClass]="{'neon-animation__neon-efect__fr': flickeringClass} ">Fr</span>
+    <span  [ngClass]="{'neon-animation__neon-efect__ont': flickeringClass}" (animationend)="repeatFlickeringAnimation()">ont</span>
+    <span  [ngClass]="{'neon-animation__neon-efect__end': flickeringClass}">-end</span>
+  </div>
+  <span class="neon-animation__neon-efect neon-animation__neon-efect__dev--margin" [ngClass]="{'neon-animation__neon-efect__dev': flickeringClass}">Dev</span>
+</section>

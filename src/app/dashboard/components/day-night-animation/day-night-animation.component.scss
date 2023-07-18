@@ -32,35 +32,43 @@
 
 .day-night-animation{
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-bottom: 3rem;
 
   &__window{
     position: relative;
     overflow: hidden;
     background-color : rgb(14, 10, 37);
     width: 23rem;
-    height: 30rem;
+    height: 25rem;
     border: 10px solid rgba(156, 99, 18, 0.525);
-    outline: 10px solid rgba(193, 138, 62, 0.525);
+    outline: 10px solid rgb(151 108 48 / 98%);
     border-bottom: 25px solid rgba(156, 99, 18, 0.525);
     border-top-right-radius: 45% ;
     border-top-left-radius: 45% ;
     margin-top: 1rem;
-    animation: back-ground-change 30s ease-in-out alternate infinite;
-    // TODO:mejorar el efecto glass
-    // &:before{
-    //   content: "";
-    //   position: absolute;
-    //   width: 70%;
-    //   height: 149%;
-    //   background-color: rgba(0, 255, 255, 0.05);
-    //   bottom: -2.4rem;
-    //   right: 7.8rem;
-    //   rotate: 41deg;
-    // }
+    animation: back-ground-change 30s 1s ease-in-out alternate infinite;
+
+    &__stars{
+      background-image: url(../../../../assets/img/SkyFullStars.png);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: show-stars 30s  alternate infinite;
+    }
+
+    &__cat{
+      position: absolute;
+      width: 9rem;
+      bottom: -1.9rem;
+      right: -1.3rem;
+      z-index: 2;
+    }
 
     &__sun{
       position: absolute;
@@ -71,7 +79,8 @@
       height: 8rem;
       background-color: rgb(247, 247, 194);
       border-radius: 50%;
-      // sun beams
+
+      // sun's beams
       &::before{
         @include beams(10rem, rgba(247, 247, 194, 0.514));
       }
@@ -87,12 +96,12 @@
       height: 7rem;
       background-color: rgb(236, 236, 222);
       border-radius: 50%;
-      //moon beams
+      //moon's beams
       &::before{
-        @include beams(9rem,rgba(236, 236, 222, 0.247));
+        @include beams(9rem,rgba(236, 236, 222, 0.164));
       }
       &::after{
-        @include beams(11rem, rgba(236, 236, 222, 0.247));
+        @include beams(12rem, rgba(236, 236, 222, 0.137));
       }
 
       &__hole{
@@ -138,15 +147,15 @@
     }
 
     &__sun__orbit{
-      right: 10rem;
-      top: 4rem;
+      right: 14rem;
+      top: 7rem;
     }
 
     &__moon__orbit{
       display: flex;
       align-items: end;
-      left  : 10rem;
-      bottom: 21rem;
+      left  : 5.6rem;
+      bottom: 18.1rem;
     }
 
     &__sun__orbit--start{
@@ -183,31 +192,19 @@
 
     &__cloud__big{
       @include cloud(8rem, rgba(255, 255, 255, 0.836), 2);
-      animation: cloud-movement 40s 1s infinite;
+      animation: cloud-movement 30s 1s infinite;
 
       &__container{
         font-size: 6rem;
       }
     }
-
-    // &__cat{
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 5rem;
-    //   z-index: 5;
-    // }
   }
 
 }
 
-@keyframes back-ground-change{
-  0%{
-    background-color : #0e0a25;
-  }
-  100%{
-    background-color: #fdae68;
-  }
-}
+// ANIMATIONS
+
+// Sun/Moon rotation Animation
 @keyframes moon-rotation {
   from{
     transform: rotate(0deg);
@@ -217,6 +214,7 @@
     transform: rotate(160deg);
   }
 }
+
 @keyframes sun-rotation {
   from{
     transform: rotate(0deg);
@@ -224,6 +222,25 @@
   70%,85%{transform:rotate(-130deg)};
   to{
     transform: rotate(-180deg);
+  }
+}
+
+// day/night back-ground change animation
+@keyframes back-ground-change{
+  0%{
+    background-color : #0e0a25;
+  }
+  100%{
+    background-color: #fdae68;
+  }
+}
+// stars appear in the back-ground animation
+@keyframes show-stars{
+  0%{
+    opacity: 1;
+  }
+  50%,100%{
+    opacity: 0;
   }
 }
 
@@ -248,3 +265,21 @@
     }
   }
 
+// MEDIA QUERIES
+@media (min-width:329px) {
+
+  .day-night-animation__window{
+    height: 30rem;
+    &__sun__orbit{
+       top: 5rem;
+       right: 10rem;
+     }
+
+     &__moon__orbit{
+       left  : 10rem;
+       bottom: 19rem;
+     }
+  }
+
+
+}

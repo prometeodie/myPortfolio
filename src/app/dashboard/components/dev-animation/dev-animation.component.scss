@@ -114,6 +114,15 @@
     height: 2vw;
     padding: 0.1vw 0;
 
+    &__block-1,
+    &__block-2,
+    &__block-3,
+    &__block-4,
+    &__block-5,
+    &__block-6{
+      opacity: 0;
+    }
+
     &__block-1{animation: sliding-bars 5s      ease-in-out infinite alternate;}
     &__block-2{animation: sliding-bars 5s 1s   ease-in-out infinite alternate;}
     &__block-3{animation: sliding-bars 5s 1.5s ease-in-out infinite alternate;}
@@ -129,6 +138,9 @@
 
   // animation to slide the bars
   @keyframes sliding-bars {
+    0%,100%{
+      opacity: 1;
+    }
     0%,50%{
      transform: translate(-40vw);
     }

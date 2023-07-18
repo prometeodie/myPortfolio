@@ -11,6 +11,7 @@ import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { MaterialModule } from '../material/material.module';
 import { DevAnimationComponent } from './components/dev-animation/dev-animation.component';
 import { DayNightAnimationComponent } from './components/day-night-animation/day-night-animation.component';
+import { NeonTextAnimationComponent } from './components/neon-text-animation/neon-text-animation.component';
 
 
 
@@ -29,7 +30,8 @@ import { DayNightAnimationComponent } from './components/day-night-animation/day
     MaterialModule,
     ReactiveFormsModule,
     DevAnimationComponent,
-    DayNightAnimationComponent
+    DayNightAnimationComponent,
+    NeonTextAnimationComponent
   ]
 })
 export class DashboardModule { }

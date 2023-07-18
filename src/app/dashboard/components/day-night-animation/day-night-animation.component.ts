@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgParticlesModule } from 'ng-particles';
 
 @Component({
   selector: 'app-day-night-animation',
