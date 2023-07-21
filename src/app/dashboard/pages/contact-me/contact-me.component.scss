@@ -1,15 +1,40 @@
 @import '../../../shared/scss/variables.scss';
 
 .contact-me{
-  overflow: hidden;
   height: 100vh;
-  box-sizing: border-box;
-    &__title{
-      margin: 0.5rem 0 0.5rem 0;
+  position: relative;
+  overflow: overlay;
+  background-image: url('../../../../assets/img/greyBrickWall.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container{
+    display: block;
+    height: 100vh;
+    position: relative;
+  }
+
+  &__title,
+  &__personal-info{
+    margin-left: 1rem;
+  }
+
+  &__title{
+      margin-bottom: 1rem;
+      padding-top: 5rem;
+    }
+
+    &__animation{
+      position: absolute;
+      top: 12rem;
+      left: 0;
+      right: 0;
     }
 
     &__personal-info{
       margin-bottom: 1rem;
+      position: relative;
+      z-index: 999;
 
         &__title{
           margin: 0;
@@ -23,15 +48,17 @@
     }
 
     &__form{
-
       display: flex;
-      padding: 0 0.5rem;
       flex-direction: column;
       align-items: self-end;
+      padding: 4rem 1rem;
+      backdrop-filter: blur(2px);
 
         &__field{
           width: 100%;
+          margin-bottom: 1rem;
           &__error{
+            font-weight: 900;
             color: rgba(216, 8, 8, 0.866);
           }
         }
@@ -58,15 +85,16 @@
       letter-spacing: 1px;
       padding: 13px 20px 13px;
       outline: 0;
-      border: 1px solid black;
+      border: 1px solid rgb(0, 0, 0);
       cursor: pointer;
-      position: absolute;
+      position: fixed;
       bottom: 1rem;
       background-color: rgba(0, 0, 0, 0);
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
-      z-index: 1;
+      z-index: 2;
+      margin-left: 1rem;
 
       &__back-ground{
         background-color: $btn-to-projects-color;
@@ -96,8 +124,13 @@
 
 // MEDIA QUERIE
 @media (min-width:600px) {
-  .contact-me__form{
-    max-width:36rem;
+  .contact-me{
+
+    &__form{
+      width: 90%;
+      max-width:800px;
+      backdrop-filter: blur(3px);
+    }
   }
 
 }
@@ -105,9 +138,16 @@
 @media (min-width:801px) {
     .contact-me{
       padding-left: 6rem;
-
+      &__title{
+        padding-top: 2rem;
+      }
     }
 
   }
 
-
+  @media (min-width:975px) {
+    .contact-me__animation{
+      right: 15%;
+      left: auto;
+    }
+  }

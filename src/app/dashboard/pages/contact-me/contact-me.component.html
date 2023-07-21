@@ -1,27 +1,30 @@
 <section class="contact-me">
-  <h1 class="contact-me__title">Contact Me</h1>
+  <!-- <img src="../../../../assets/img/greyBrickWall.png" class="test" alt="brick-wall"> -->
+  <div class="contact-me__container">
+    <h1 class="contact-me__title">Contact Me</h1>
   <div class="contact-me__personal-info">
     <h4 class="contact-me__personal-info__title">My Email</h4>
     <i class="fa-solid fa-envelope"></i><span class="contact-me__personal-info__field" >franco.d.r1992@gmail.com</span>
   </div>
+  <app-day-night-animation class='contact-me__animation' data-aos="fade-left"/>
 
   <form data-aos="zoom-out-up" class="contact-me__form" (submit)="submitForm()" [formGroup]="myForm">
-      <mat-form-field class="contact-me__form__field">
+      <mat-form-field class="contact-me__form__field" appearance="outline">
         <mat-label>Name and Last-Name</mat-label>
         <input matInput type="text" formControlName="name">
         <mat-hint class="contact-me__form__field__error" *ngIf="isValidField('name')">{{showError('name')}} Example: Name Last-Name</mat-hint>
       </mat-form-field>
-      <mat-form-field class="contact-me__form__field">
+      <mat-form-field class="contact-me__form__field" appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput type="text" formControlName="email" autocomplete="off">
         <mat-hint class="contact-me__form__field__error" *ngIf="isValidField('email')">{{showError('email')}} Example:example@example.com</mat-hint>
       </mat-form-field>
-      <mat-form-field class="contact-me__form__field">
+      <mat-form-field class="contact-me__form__field" appearance="outline">
         <mat-label>Subject</mat-label>
         <input matInput  type="text" formControlName="subject">
         <mat-hint class="contact-me__form__field__error" *ngIf="isValidField('subject')">{{showError('subject')}}</mat-hint>
       </mat-form-field>
-      <mat-form-field class="contact-me__form__field">
+      <mat-form-field class="contact-me__form__field" appearance="outline">
         <mat-label>Message</mat-label>
         <textarea matInput type="text" formControlName="message"></textarea>
         <mat-hint class="contact-me__form__field__error" *ngIf="isValidField('message')">{{showError('message')}}</mat-hint>
@@ -34,4 +37,5 @@
     <i class="contact-me__back-btn__icon fa-sharp fa-solid fa-left-long"></i>
     <span>Projects</span>
   </button>
+  </div>
 </section>

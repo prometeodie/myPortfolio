@@ -42,11 +42,12 @@
     position: relative;
     overflow: hidden;
     background-color : rgb(14, 10, 37);
-    width: 23rem;
-    height: 25rem;
-    border: 10px solid rgba(156, 99, 18, 0.525);
-    outline: 10px solid rgb(151 108 48 / 98%);
-    border-bottom: 25px solid rgba(156, 99, 18, 0.525);
+    box-shadow: 0px 0px 80px #000;
+    width: 17rem;
+    height: 23.5rem;
+    border: 10px solid rgb(107 68 28);
+    outline: 10px solid #562b05;
+    border-bottom: 25px solid rgb(107 68 28);
     border-top-right-radius: 45% ;
     border-top-left-radius: 45% ;
     margin-top: 1rem;
@@ -79,6 +80,7 @@
       height: 8rem;
       background-color: rgb(247, 247, 194);
       border-radius: 50%;
+      box-shadow: 0 0 70px #f3f377;
 
       // sun's beams
       &::before{
@@ -96,6 +98,7 @@
       height: 7rem;
       background-color: rgb(236, 236, 222);
       border-radius: 50%;
+      box-shadow: 0 0 70px #c1bfbf;
       //moon's beams
       &::before{
         @include beams(9rem,rgba(236, 236, 222, 0.164));
@@ -231,7 +234,7 @@
     background-color : #0e0a25;
   }
   100%{
-    background-color: #fdae68;
+    background-color: #ffa556;
   }
 }
 // stars appear in the back-ground animation
@@ -266,10 +269,11 @@
   }
 
 // MEDIA QUERIES
-@media (min-width:329px) {
+@media (min-width:420px) {
 
   .day-night-animation__window{
     height: 30rem;
+    width: 23rem;
     &__sun__orbit{
        top: 5rem;
        right: 10rem;

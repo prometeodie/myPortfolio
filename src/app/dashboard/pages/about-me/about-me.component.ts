@@ -28,6 +28,7 @@ export class AboutMeComponent implements OnInit{
     'JavaScript: de cero hasta los detalles (ES5) | 2020 |Fernando Herrera',
     'Udemy Angular Course: de cero a  experto | 2021 |Fernando Herrera',
     'Se Programa ⏐Sep. - Nov. 2022 ',
+    'PathwayConnect Certificate | Feb. - Dic. 2022',
     'Argentina Programa ⏐Nov. 2022 - Feb. 2023',
     'Udemy RXJS Course ReactiveX - RxJs: De cero hasta los detalles | 2023 |Fernando Herrera'
   ]
