@@ -1,1 +1,27 @@
-<p>chat-bot-gpt works!</p>
+<section class="chat-bot">
+  <div class="chat-bot__chat"  [ngClass]="isOpen ? 'chat-bot__chat--active' : '' ">
+    <div class="chat-bot__chat__bot-head">
+      <i class="fa-solid fa-robot"></i>
+      <i class="fa-solid fa-gear chat-bot__chat__bot-head__gear-spiner"></i>
+    </div>
+    <!-- BOARD -->
+    <div class="chat-bot__chat__container-board">
+      <div class="chat-bot__chat__container-board__board" #board>
+        <p *ngFor="let menssage of menssages" [class]="menssage.type">{{menssage.text}}</p>
+      </div>
+    </div>
+    <!-- FORM -->
+    <form class="chat-bot__chat__form" [formGroup]="myForm" (submit)="onSave()">
+      <input formControlName="question" class="chat-bot__chat__form__input" type="text">
+      <button class="chat-bot__chat__form__btn"
+              [disabled]="myForm.get('question')?.errors"
+              type="submit">
+            <i class="fa-regular fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+  <!-- BTN to OPEN Board -->
+  <div class="chat-bot__open-btn" (click)="openChat()">
+    <i class="fa-solid fa-comments"></i>
+  </div>
+</section>

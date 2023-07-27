@@ -9,6 +9,12 @@
   --slice-5: inset(80% -6px 5% 0);
 }
 
+.char-gpt{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+}
+
 .about-me-container,
 .about-me__text__skills{
   position: relative;
