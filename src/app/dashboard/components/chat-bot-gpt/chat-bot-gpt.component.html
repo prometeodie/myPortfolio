@@ -2,26 +2,32 @@
   <div class="chat-bot__chat"  [ngClass]="isOpen ? 'chat-bot__chat--active' : '' ">
     <div class="chat-bot__chat__bot-head">
       <i class="fa-solid fa-robot"></i>
-      <i class="fa-solid fa-gear chat-bot__chat__bot-head__gear-spiner"></i>
+      <i class="fa-solid fa-gear chat-bot__chat__bot-head__gear-spiner" *ngIf="spiner"></i>
     </div>
     <!-- BOARD -->
     <div class="chat-bot__chat__container-board">
       <div class="chat-bot__chat__container-board__board" #board>
-        <p *ngFor="let menssage of menssages" [class]="menssage.type">{{menssage.text}}</p>
+        <p *ngFor="let message of messages" [class]="message.type">{{message.text}}</p>
       </div>
     </div>
     <!-- FORM -->
     <form class="chat-bot__chat__form" [formGroup]="myForm" (submit)="onSave()">
-      <input formControlName="question" class="chat-bot__chat__form__input" type="text">
+      <input formControlName="question" class="chat-bot__chat__form__input" placeholder="Send a message..." type="text">
       <button class="chat-bot__chat__form__btn"
               [disabled]="myForm.get('question')?.errors"
               type="submit">
-            <i class="fa-regular fa-paper-plane"></i>
+            <i class="fa-regular fa-paper-plane chat-bot__chat__form__btn__icon"></i>
       </button>
     </form>
   </div>
   <!-- BTN to OPEN Board -->
-  <div class="chat-bot__open-btn" (click)="openChat()">
-    <i class="fa-solid fa-comments"></i>
+  <div class="chat-bot__open-btn__container">
+    <div class="chat-bot__open-btn" (click)="openChat()">
+      <i class="fa-solid fa-comments"></i>
+    </div>
+    <div class="chat-bot__pop-up-info-board" [ngClass]="isInfoPopUpOpen ? 'chat-bot__pop-up-info-board--visible' : '' ">
+        <p class="chat-bot__pop-up-info-board__text" >Hey! I'm a chat bot, You can ask me about Franco.</p>
+      <i class="fa-solid fa-xmark chat-bot__pop-up-info-board__close-icon" (click)="closePopUp()"></i>
+    </div>
   </div>
 </section>

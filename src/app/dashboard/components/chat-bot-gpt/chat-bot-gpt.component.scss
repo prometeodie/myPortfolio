@@ -1,4 +1,6 @@
 
+// VARIABLES
+$white-color:#fff;
 
 .chat-bot,
 .chat-bot__chat__form,
@@ -13,31 +15,42 @@
 
 .chat-bot__chat__form__btn,
 .chat-bot__chat__form__input{
-  background: rgb(173, 144, 11);
+  backdrop-filter: blur(2px);
   border: none;
+}
+
+.chat-bot,
+.chat-bot__pop-up-info-board,
+.chat-bot__open-btn__container,
+.chat-bot__open-btn{
+  position: relative;
 }
 
 .chat-bot{
   width:75%;
-  position: relative;
-  color: #fff;
-
+  color: $white-color;
   &__chat{
+    position: fixed;
     display: none;
+    width: 14rem;
+    right: 4.5rem;
+    top: 25%;
+    z-index: 99;
   }
 
   &__chat__bot-head{
     height: 1.5rem;
     padding: 0.3rem;
-    background-color: mediumaquamarine;
-    color: #fff;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 255, 255, 0.26);
+    color: $white-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: x-large;
 
     &__gear-spiner{
-      animation: spiner 4s ease-in-out infinite;
+      animation: spiner 1s ease-in-out infinite;
     }
   }
 
@@ -45,8 +58,16 @@
     display: block;
   }
 
+  &__open-btn__container{
+    position: fixed;
+    top: 50%;
+    right: 0.3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+
   &__open-btn{
-    position: relative;
     justify-content: center;
     align-items: center;
     width: 2rem;
@@ -57,6 +78,14 @@
     font-size: 23px;
     border-radius: 50%;
     cursor: pointer;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+
+    &:active{
+      transform: scale(0.9);
+    }
   }
 
   &__chat__container-board::-webkit-scrollbar {
@@ -67,16 +96,17 @@
       overflow-y: auto;
       width: 13rem;
       height: 13rem;
-      padding: 1rem 0.5rem;
-      background: rgb(39, 76, 67);
+      padding: 1rem 0.5rem 2.3rem 0.5rem;
+      background-color: #00000080;
+      backdrop-filter: blur(2px);
       border: none;
-      color: #fff;
+      color: $white-color;
       font-family: sans-serif;
       scroll-behavior: smooth;
 
-      &__bot-menssage,
-      &__user-menssage,
-      &__error-menssage{
+      &__bot-message,
+      &__user-message,
+      &__error-message{
         display: block;
         padding: 0.4rem 0.6rem;
         max-width: 75%;
@@ -84,7 +114,7 @@
         font-size: smaller;
       }
 
-        &__bot-menssage{
+        &__bot-message{
           float: left;
           background-color: black;
           border-top-left-radius: 8px;
@@ -92,7 +122,7 @@
           border-bottom-right-radius: 8px;
         }
 
-        &__user-menssage{
+        &__user-message{
           float: right;
           background-color: green;
           border-top-left-radius: 8px;
@@ -100,21 +130,22 @@
           border-bottom-left-radius: 8px;
         }
 
-        &__error-menssage{
-          color: rgb(161, 39, 39);
+        &__error-message{
+          color: rgb(184, 41, 41);
         }
     }
   }
   &__chat__form{
-    // TODO:acomodar colores
       &__btn{
-        border-left: 0.5px solid rgb(19, 0, 128);
-        color: rgb(128, 0, 128);
+        border-left: 0.5px solid rgb(207, 207, 211);
+        backdrop-filter: blur(2px);
+        background: rgba(255, 0, 255, 0.219);
+        color: $white-color;
         cursor: pointer;
         padding: 0 0.5rem;
 
         &:hover{
-          background: red ;
+          background: rgba(255, 0, 255, 0.473);
         }
 
         &:active{
@@ -122,14 +153,50 @@
         }
         &:disabled{
           background-color: grey;
-          color: #fff;
+          backdrop-filter: blur(2px);
+          color: $white-color;
+        }
+
+        &__icon:hover{
+          transition: 0.5s ease;
+          transform: scale(1.2);
         }
       }
 
       &__input{
-      color: #fff;
+      color: $white-color;
       font-family: sans-serif;
-      padding: 0.5rem 0;
+      padding: 0.5rem 0.3rem;
+      background-color: rgba(0, 0, 0, 0.851);
+    }
+  }
+
+
+  &__pop-up-info-board{
+    display: block;
+    right: 0.3rem;
+    width: 8rem;
+    height: 4rem;
+    top:36%;
+    right: 4rem;
+    padding: 0.9rem;
+    color: $white-color;
+    background-color: rgba(0, 0, 0, 0.851);
+    border-radius: 8px;
+
+    &__close-icon{
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      padding: 2px;
+      cursor: pointer;
+
+      &:hover{
+        color: rgb(214, 93, 93)
+      }
+    }
+    &--visible{
+      opacity: 0;
     }
   }
 }

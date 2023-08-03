@@ -7,3 +7,8 @@
 .particles{
   z-index: -2;
 }
+
+.chat-bot{
+  position: fixed;
+  z-index: 99999;
+}

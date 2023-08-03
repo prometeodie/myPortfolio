@@ -9,6 +9,7 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgParticlesModule } from "ng-particles";
+import { ChatBotGptComponent } from './dashboard/components/chat-bot-gpt/chat-bot-gpt.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgParticlesModule } from "ng-particles";
     BrowserModule,
     HttpClientModule,
     MaterialModule,
-    NgParticlesModule
+    NgParticlesModule,
+    ChatBotGptComponent
   ],
   exports:[
     SideMenuComponent

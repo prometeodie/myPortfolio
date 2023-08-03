@@ -1,6 +1,6 @@
 
 
-export interface Menssage {
+export interface Message {
   text:String;
   type:string;
 }
