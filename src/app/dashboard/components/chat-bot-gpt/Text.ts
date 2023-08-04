@@ -28,4 +28,5 @@ and then answer it,you have to send just the text.
   he love sports, running and activities outside.
   he loves cooking and make delicius and healthy.
   goals: become a full-stack developer, and continue develop his hability with angular and phyton.
-`
+  `
+  // projects:

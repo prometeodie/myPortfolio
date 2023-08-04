@@ -96,7 +96,6 @@ export class ChatBotGptComponent implements OnInit{
       this.botMessage.splice(1,2)
     }
     this.botMessage.push(fullMessage);
-    console.log(this.botMessage)
   }
 
   // openAI only acept string, this method transfor the array where all the questions and answers are saved in a string,

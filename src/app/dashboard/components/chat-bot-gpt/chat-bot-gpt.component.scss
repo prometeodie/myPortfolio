@@ -176,10 +176,10 @@ $white-color:#fff;
     display: block;
     right: 0.3rem;
     width: 8rem;
-    height: 4rem;
-    top:36%;
+    height: 4.8rem;
+    top: 36%;
     right: 4rem;
-    padding: 0.9rem;
+    padding: 0.8rem;
     color: $white-color;
     background-color: rgba(0, 0, 0, 0.851);
     border-radius: 8px;
@@ -197,6 +197,7 @@ $white-color:#fff;
     }
     &--visible{
       opacity: 0;
+      width: 2rem;
     }
   }
 }

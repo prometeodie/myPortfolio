@@ -12,9 +12,6 @@ import { MaterialModule } from '../material/material.module';
 import { DevAnimationComponent } from './components/dev-animation/dev-animation.component';
 import { DayNightAnimationComponent } from './components/day-night-animation/day-night-animation.component';
 import { NeonTextAnimationComponent } from './components/neon-text-animation/neon-text-animation.component';
-import { ChatBotGptComponent } from './components/chat-bot-gpt/chat-bot-gpt.component';
-
-
 
 
 @NgModule({
@@ -33,8 +30,6 @@ import { ChatBotGptComponent } from './components/chat-bot-gpt/chat-bot-gpt.comp
     DevAnimationComponent,
     DayNightAnimationComponent,
     NeonTextAnimationComponent,
-    ChatBotGptComponent
-    // TODO:borrar chatbotGpt component por que va a ser puesto en el main app de la aplicacion
   ]
 })
 export class DashboardModule { }
