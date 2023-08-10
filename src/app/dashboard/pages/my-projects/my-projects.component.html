@@ -27,8 +27,8 @@
         <mat-chip *ngFor="let chip of project.chip">{{chip}}</mat-chip>
       </mat-chip-listbox>
       <mat-card-actions class="my-projects__card__actions">
-        <a href="#" class="my-projects__card__actions__anchor my-projects__card__actions__anchor--aqua">CODE</a>
-        <a href="#" class="my-projects__card__actions__anchor">LIVE DEMO</a>
+        <a [href]="project.code" class="my-projects__card__actions__anchor my-projects__card__actions__anchor--aqua">CODE</a>
+        <a [href]="project.liveDemo" class="my-projects__card__actions__anchor">LIVE DEMO</a>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>

@@ -2,17 +2,17 @@
 import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi } from 'openai';
 import { Observable, catchError, filter, from, map, of } from 'rxjs';
-import { enviroment } from 'src/environment/enviroment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatBotServiceTsService {
-private API_KEY:string = enviroment.apikey;
+
 
   constructor() { }
 
-  readonly configuration = new Configuration({apiKey:this.API_KEY});
+  readonly configuration = new Configuration();
 
   readonly openAi = new OpenAIApi(this.configuration);
 

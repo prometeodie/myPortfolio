@@ -4,5 +4,7 @@ export interface Projects {
   subTitle:string;
   img:string;
   paragraph:string;
-  chip:string[]
+  chip:string[];
+  code:string;
+  liveDemo:string
 }
