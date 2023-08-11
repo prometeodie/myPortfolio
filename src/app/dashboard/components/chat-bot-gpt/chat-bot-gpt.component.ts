@@ -40,7 +40,7 @@ export class ChatBotGptComponent implements OnInit{
 
   // TODO:borrar
   testearServer(){
-    this.http.get(this.URL).subscribe(console.log)
+    this.http.get(this.URL).subscribe(resp =>{console.log(resp)})
 }
 
 
