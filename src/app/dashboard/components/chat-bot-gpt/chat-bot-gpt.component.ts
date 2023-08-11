@@ -1,21 +1,21 @@
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChatBotServiceTsService } from './chat-bot.service.ts.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
 import { text } from './Text';
-import { Message } from './interfaces';
+import { FullMessage, Message } from './interfaces';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @Component({
   selector: 'chat-bot-gpt',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './chat-bot-gpt.component.html',
   styleUrls: ['./chat-bot-gpt.component.scss']
 })
 export class ChatBotGptComponent implements OnInit{
-  private chatBotService =  inject(ChatBotServiceTsService);
+  readonly URL = 'https://protf_server-1-b4836098.deta.app/chatbot';
+
   private fb = inject(FormBuilder);
   public isOpen: boolean = false;
   public messages: Message[]=[];
@@ -28,14 +28,13 @@ export class ChatBotGptComponent implements OnInit{
   public isInfoPopUpOpen: boolean = false;
   public botMessage: string[] = [text];
 
-
   @ViewChild('board')
   private board!: ElementRef;
 
   public myForm :FormGroup = this.fb.group({
     question:['',[Validators.required]]
   })
-
+  constructor(private http: HttpClient){}
   ngOnInit(): void {}
 
   openChat():void{
@@ -60,7 +59,7 @@ export class ChatBotGptComponent implements OnInit{
   // Form submit
   onSave():void{
     const question = this.myForm.get('question')?.value;
-    let text = ''
+    let text!:FullMessage;
     if (question.length === 0) return;
 
       this.savemessage(question,this.userClass)
@@ -71,9 +70,9 @@ export class ChatBotGptComponent implements OnInit{
       this.getBotResponse(text);
       this.scrollToBottom();
   }
-  // methos to get the information from OpenAI
-  getBotResponse(question:string):void{
-    this.chatBotService.getDataFromOpenAI(question).subscribe(resp =>{
+  // methods to get the information from OpenAI
+  getBotResponse(question:FullMessage):void{
+    this.http.post<any>(this.URL,question).subscribe(resp =>{
       if (!resp){
          this.savemessage('Something goes wrong, try again....',this.errorClass);
          this.turnOnOffSpiner()
@@ -100,7 +99,8 @@ export class ChatBotGptComponent implements OnInit{
 
   // openAI only acept string, this method transfor the array where all the questions and answers are saved in a string,
   concatText(array:string[]){
-    return array.reduce((a,b)=>{return a+b});
+    const text = array.reduce((a,b)=>{return a+b});
+    return {message:text}
   }
 
   closePopUp(){
