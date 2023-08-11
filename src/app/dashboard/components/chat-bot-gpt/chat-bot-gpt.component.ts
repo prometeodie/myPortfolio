@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { text } from './Text';
 import { FullMessage, Message } from './interfaces';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs';
+import { catchError, throwError } from 'rxjs';
 
 
 @Component({
@@ -41,9 +41,7 @@ export class ChatBotGptComponent implements OnInit{
 
   // TODO:borrar
   testearServer(){
-    this.http.get(this.URL).pipe(
-      catchError(err=>{return err})
-    ).subscribe(resp =>{console.log(`lalalall${resp}`)})
+    this.http.get(this.URL).subscribe(resp =>{console.log(`lalalall${resp}`)})
 }
 
 
