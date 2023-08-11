@@ -14,8 +14,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   styleUrls: ['./chat-bot-gpt.component.scss']
 })
 export class ChatBotGptComponent implements OnInit{
-  readonly URL = 'https://protf_server-1-b4836098.deta.app/chatbot';
-
+  readonly URL = 'https://protf_server-1-b4836098.deta.app'
   private fb = inject(FormBuilder);
   public isOpen: boolean = false;
   public messages: Message[]=[];
@@ -35,7 +34,15 @@ export class ChatBotGptComponent implements OnInit{
     question:['',[Validators.required]]
   })
   constructor(private http: HttpClient){}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+  // TODO:borrar
+  testearServer(){
+    this.http.get(this.URL).subscribe(console.log)
+}
+
 
   openChat():void{
     this.isOpen = !this.isOpen;
