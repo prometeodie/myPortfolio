@@ -43,7 +43,7 @@ export class ChatBotGptComponent implements OnInit{
   testearServer(){
     this.http.get(this.URL).pipe(
       catchError(err=>{return err})
-    ).subscribe(console.log)
+    ).subscribe(resp =>{console.log(`lalalall${resp}`)})
 }
 
 
