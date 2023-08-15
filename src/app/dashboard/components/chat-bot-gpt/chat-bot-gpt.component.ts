@@ -15,8 +15,9 @@ import { catchError, throwError } from 'rxjs';
   styleUrls: ['./chat-bot-gpt.component.scss']
 })
 export class ChatBotGptComponent implements OnInit{
-  readonly URL = 'https://protf_server-1-b4836098.deta.app'
+  readonly URL ='https://protf_server-1-b4836098.deta.app/chatbot';
   private fb = inject(FormBuilder);
+  private http = inject(HttpClient)
   public isOpen: boolean = false;
   public messages: Message[]=[];
 
@@ -34,16 +35,10 @@ export class ChatBotGptComponent implements OnInit{
   public myForm :FormGroup = this.fb.group({
     question:['',[Validators.required]]
   })
-  constructor(private http: HttpClient){}
-  ngOnInit(): void {
-    this.testearServer()
-  }
 
-  // TODO:borrar
-  testearServer(){
-    this.http.get(this.URL).subscribe(resp =>{console.log(`lalalall${resp}`)})
-}
+  constructor(){}
 
+  ngOnInit(): void { }
 
   openChat():void{
     this.isOpen = !this.isOpen;
@@ -81,13 +76,13 @@ export class ChatBotGptComponent implements OnInit{
   // methods to get the information from OpenAI
   getBotResponse(question:FullMessage):void{
     this.http.post<any>(this.URL,question).subscribe(resp =>{
-      if (!resp){
+      if (!resp[0]){
          this.savemessage('Something goes wrong, try again....',this.errorClass);
          this.turnOnOffSpiner()
         return;
     }
-    this.savemessage(resp.text,this.botClass)
-    this.AddTextToTheArray('assistant',resp.text);
+    this.savemessage(resp[0],this.botClass)
+    this.AddTextToTheArray('assistant',resp[0]);
     this.turnOnOffSpiner()
     this.scrollToBottom();
     })

@@ -17,9 +17,9 @@ and then answer it,you have to send just the text.
  courses: JavaScript: de cero hasta los detalles (ES5) | 2020 |Fernando Herrera
           Udemy Angular Course: de cero a experto | 2021 |Fernando Herrera
           Se Programa ⏐Sep. - Nov. 2022
-          PathwayConnect Certificate | Feb. - Dic. 2022
           Argentina Programa ⏐Nov. 2022 - Feb. 2023
           Udemy RXJS Course ReactiveX - RxJs: De cero hasta los detalles | 2023 |Fernando Herrera
+  English courses: PathwayConnect Certificate | Feb. - Dic. 2022
   linkedin:https://www.linkedin.com/in/franco-rodriguez-b121491b8/
   git-Hub : https://github.com/prometeodie
   about Franco:Over time, I was able to discover a great passion for programming and problem solving by engaging with regular study and commitment in my continuous
