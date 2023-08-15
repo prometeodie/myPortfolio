@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidatorFn, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ErrorMessage, FormResponse } from '../../interfaces';
@@ -10,12 +10,17 @@ import { catchError, map, of } from 'rxjs';
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.scss']
 })
-export class ContactMeComponent {
-  public  emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
-  public  fullNamePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
+export class ContactMeComponent implements AfterViewInit {
 
+  ngAfterViewInit(): void {
+    this.isImgLoaded = true;
+  }
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
+  public  isImgLoaded:boolean = false;
+  public  emailPattern: string = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$";
+  public  fullNamePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
+
 
   public myForm = this.fb.group({
     name:['',[Validators.required,Validators.pattern(this.fullNamePattern)]],
@@ -34,7 +39,7 @@ export class ContactMeComponent {
         const {next, ok} = resp;
       if(ok){
         const text = 'Your message has been sent succesfully, I will contact you soon.Thanks!'
-        this.formSubmitAlert(text, 'success', 1500);
+        this.formSubmitAlert(text, 'success', 3000);
         // this block of code solve the angular material problem that it shows all the fields in red color after the form reset
         this.myForm.reset();
         Object.keys(this.myForm.controls).forEach(key => {
@@ -44,7 +49,7 @@ export class ContactMeComponent {
       }
     }),
     catchError(err=>{
-      this.formSubmitAlert('Something goes wrong!<br>Please try later.', 'error', 1500);
+      this.formSubmitAlert('Something goes wrong!<br>Please try later.', 'error', 3000);
       return of(err)
     })
     ).subscribe()
