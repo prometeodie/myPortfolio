@@ -5,6 +5,7 @@ import { text } from './Text';
 import { FullMessage, Message } from './interfaces';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
+import { FormResponse } from '../../interfaces';
 
 
 @Component({
