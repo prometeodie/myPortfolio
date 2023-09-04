@@ -24,23 +24,23 @@ export class MyProjectsComponent {
       liveDemo:'https://warehouse-location.vercel.app/auth/login'
     },
     {
+      title:'Heroes-App',
+      subTitle:'Heroes',
+      img:'../../../../assets/img/projects/heroes-app.jpeg',
+      paragraph:'this application allows add new heroes, save a picture and information of them,also it allows edit and delete them. It has a search bar where you can search the heroes that are saved in the DB',
+      chip:['Angular','HTML','css','Angular Material','Prime Flex'],
+      code:'https://github.com/prometeodie/HeroesApp',
+      liveDemo:'https://heroes-app-liart.vercel.app/auth/login'
+    },
+    {
       title:'Portfolio',
       subTitle:'Rick Sanchez',
       img:'../../../../assets/img/projects/rick-portfolio.jpeg',
       paragraph:`It's a portfolio using Java Script Vanilla, 100% functional, responsive. Using the best practices`,
-      chip:['Java Script','HTML','Css'],
+      chip:['Java Script','HTML','css'],
       code:'https://github.com/prometeodie/Proyecto-cv-Franco.D.Rodriguez',
       liveDemo:'https://prometeodie.github.io/Proyecto-cv-Franco.D.Rodriguez'
     },
-    // {
-    //   title:'Heroes App',
-    //   subTitle:'',
-    //   img:'../../../../assets/img/53741-miles-morales.jpg',
-    //   paragraph:'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.',
-    //   chip:['one fish','one fish','one fish','one fish'],
-    //   code:'',
-    //   liveDemo:''
-    // },
     // {
     //   title:'Shiba Inu',
     //   subTitle:'Dog Breed',
