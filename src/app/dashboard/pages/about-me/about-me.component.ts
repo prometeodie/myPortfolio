@@ -29,8 +29,9 @@ export class AboutMeComponent implements OnInit{
     'Udemy Angular Course: de cero a  experto | 2021 |Fernando Herrera',
     'Se Programa ⏐Sep. - Nov. 2022 ',
     'PathwayConnect Certificate | Feb. - Dic. 2022',
-    'Argentina Programa ⏐Nov. 2022 - Feb. 2023',
-    'Udemy RXJS Course ReactiveX - RxJs: De cero hasta los detalles | 2023 |Fernando Herrera'
+    'Argentina Programa - desarrollo Front-end ⏐ Nov. 2022 - Feb. 2023',
+    'Udemy RXJS Course ReactiveX - RxJs: De cero hasta los detalles | 2023 |Fernando Herrera',
+    'Argentina Programa - Procesamiento de datos con Python | Aug. - sep 2023 '
   ]
 
   public cvLink: string = 'https://drive.google.com/uc?export=download&id=1_dTRfZp4IYwJXT5IhbTpSnkVFC6M1Uqf';
