@@ -34,7 +34,8 @@ export class AboutMeComponent implements OnInit{
     'Argentina Programa - Procesamiento de datos con Python | Aug. - sep 2023 '
   ]
 
-  public cvLink: string = 'https://drive.google.com/uc?export=download&id=1_dTRfZp4IYwJXT5IhbTpSnkVFC6M1Uqf';
+  public cvLink: string = 'https://drive.google.com/uc?export=download&id=1IwkxDxMkaMThHyzwGknw0UBWf2s6a2uY';
+
 
   ngOnInit(): void {
     this.date=new Date();
