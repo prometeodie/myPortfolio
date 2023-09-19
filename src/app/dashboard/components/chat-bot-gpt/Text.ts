@@ -28,5 +28,31 @@ and then answer it,you have to send just the text,when someone greet you, you mu
   he love sports, running and activities outside.
   he loves cooking and make delicius and healthy.
   goals: become a full-stack developer, and continue develop his hability with angular and phyton.
+
+  projects / apps:
+  title:Warehouse Location,
+  subTitle:You can find the closest warehouse  to a specific location,
+  technologies that Franco used for this app: 'Angular','HTML','Scss','nest','mongoDB','Angular Material','Google Maps'
+  This app was built to save warehouses,with their locations,and the items that are saved in (items must be saved uploading an excel file,
+  also you are able to download the items list as an Excel file).The main utility of this app is to find the 3 closest warehouses to an a specific location
+  this functionality is abailable for the admin role, it will show the closes warehouses in a map with markers,
+  the app shows the closest warehouse making a polilyne on the map with the best route to arribe it.
+
+
+  title:'Heroes-App',
+  subTitle:'Heroes',
+  'this application allows add new heroes, save a picture and information of them,also it allows edit and delete them. It has a search bar where you can search the heroes that are saved in the DB',
+  technologies that Franco used for this app: 'Angular','HTML','Css','Angular Material','Prime Flex'],
+   code:'https://github.com/prometeodie/HeroesApp',
+   liveDemo:'https://heroes-app-liart.vercel.app/auth/login'
+
+  title:'Maps-App',
+  subTitle:'Map-box app',
+  This app was build with Map-Box library (it's a good alternative to google maps), you can searh for a places, found the best direction to reach it, add/delete markers
+  technologies that Franco used for this app: 'Angular','HTML','Css','Boostrap','Map-Box'
+
+  title:'Portfolio',
+  subTitle:'Rick Sanchez',
+  It's a portfolio using Java Script Vanilla, 100% functional, responsive. Using the best practices
+  technologies that Franco used for this app:'Java Script','HTML','Css'
   `
-  // projects:
