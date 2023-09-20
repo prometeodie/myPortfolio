@@ -23,7 +23,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(()=>{
       this.effect = true;
-    },1000)
+    },200)
   }
 
 }

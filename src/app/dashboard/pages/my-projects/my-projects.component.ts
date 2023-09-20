@@ -14,7 +14,7 @@ export class MyProjectsComponent {
       title:'Warehouse Location',
       subTitle:'You can find the closest warehouse  to a specific location',
       img:'../../../../assets/img/projects/warehouse-location.jpeg',
-      paragraph:`This app was built to save warehouses,with their locations,and the items that are saved in (items must be saved uploading an excel file,
+      paragraph:`This app was built to save warehouses,with their locations and the items that are saved in (items must be saved uploading an excel file,
        also you are able to download the items list as an Excel file).The main utility of this app is to find the 3 closest warehouses to an a specific location
        this functionality is abailable for the admin role, it will show the closes warehouses in a map with markers,
        the app shows the closest warehouse making a polilyne on the map with the best route to arribe it.`
@@ -37,7 +37,7 @@ export class MyProjectsComponent {
       subTitle:'Map-box app',
       img:'../../../../assets/img/projects/map-box-app.jpeg',
       paragraph:`This app was build with Map-Box library (it's a good alternative to google maps), you can searh for a places, found the best direction to reach it, add/delete markers`,
-      chip:['Angular','HTML','Css','Boostrap','Map-Box'],
+      chip:['Angular','HTML','Css','Bootstrap','Map-Box'],
       code:'https://github.com/prometeodie/mapsApp',
       liveDemo:'https://maps-app-prometeodie.vercel.app/mapas/mapScreen'
     },
