@@ -21,7 +21,7 @@ export class MyProjectsComponent {
        ,
       chip:['Angular','HTML','Scss','nest','mongoDB','Angular Material','Google Maps'],
       code:'https://github.com/prometeodie/Warehouses-App',
-      liveDemo:'https://warehouse-location.vercel.app/auth/login'
+      liveDemo:'https://warehouses-location.vercel.app/auth/login'
     },
     {
       title:'Heroes-App',
